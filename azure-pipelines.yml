@@ -1,5 +1,6 @@
 trigger:
 - main
+- features/incidents
 
 pool:
   vmImage: 'windows-latest'
@@ -9,18 +10,33 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  displayName: 'Install .NET SDK'
   inputs:
     version: '8.0.x'
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Build project'
+- task: DotNetCoreCLI@2
+  displayName: 'Restore'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
 
-- script: dotnet test --configuration $(buildConfiguration) --no-build
-  displayName: 'Run unit tests'
-  continueOnError: true
+- task: DotNetCoreCLI@2
+  displayName: 'Build project'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --no-restore'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish'
+  inputs:
+    command: 'publish'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+    publishWebProjects: false
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
