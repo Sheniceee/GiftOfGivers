@@ -1,0 +1,46 @@
+﻿@model GiftOfGivers.Models.Donation
+@{
+    ViewData["Title"] = "Make a Donation";
+}
+
+<div class="container mt-4">
+    <h2>Make a Donation</h2>
+    <p class="text-muted">Donate as a guest or <a asp-controller="Account" asp-action="Login">login</a> to track your donation history</p>
+
+    <form asp-action="Index" method="post" class="mt-4">
+        <div class="mb-3">
+            <label class="form-label">Your Name (optional- leave blank to donate anonymously)</label>
+            <input asp-for="DonorName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount</label>
+            <input asp-for="Amount" class="form-control" type="number" />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Currency</label>
+            <select asp-for="Currency" class="form-select">
+                <option value="ZAR">ZAR - South African Rand</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="GBP">GBP - British Pound</option>
+            </select>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input asp-for="IsRecurring" class="form-check-input" type="checkbox" />
+            <label class="form-check-label">Make this a recurring monthly donation</label>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Donate Now</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+                CRLXk6z7KY4RYdwTZjhnTFWmZr3PI5SoZHJjYD9phrm7q1TJV2n3JQQJ99CIACAAAAAKydBzAAASAZDO1bI3

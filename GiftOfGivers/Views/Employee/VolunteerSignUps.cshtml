@@ -1,0 +1,48 @@
+﻿@model List<GiftOfGivers.Models.Volunteer>
+
+@{
+    ViewData["Title"] = "Volunteer Sign-ups";
+}
+
+<form method="get" class="row g-2 mb-4">
+    <div class="col-auto">
+        <input type="text" name="skillfilter" value="@(ViewBag.Skillfilter ?? "")" class="form-control" placeholder="Filter by skill..." />
+    </div>
+
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary-brand">Filter</button>
+    </div>
+
+    <div class="col-auto">
+        <a asp-action="VolunteerSignUps" class="btn btn-outline-secondary">Clear</a>
+    </div>
+</form>
+
+@if (Model == null || !Model.Any())
+{
+    <p class="text-muted">No volunteers match this filter</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Skills</th>
+                <th>Availability</th>
+                <th>Registered</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td>@v.FullName</td>
+                <td>@v.Skills</td>
+                <td>@v.Availability</td>
+                <td>@v.DateRegistered.ToString("dd MMM yyyy")</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

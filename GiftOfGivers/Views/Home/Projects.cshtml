@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<ReliefProject>
+@{
+    ViewData["Title"] = "Relief Projects";
+}
+<h2>Ongoing Relief Projects</h2>
+@if (!Model.Any())
+{
+    <p class="text-muted">No project updates have been posted yet. Check back soon</p>
+}
+else
+{
+    @foreach (var project in Model)
+    {
+        <div class="card card-module p-4 mb-3">
+            <h4> @project.Title</h4>
+            <p class="text-muted mb-1">@project.Location | @project.DatePosted.ToString("dd-MMM yyyy")</p>
+            <p>@project.Description</p>
+            <small class="text-muted">Posted by @project.PostedByEmployee</small>
+        </div>
+    }
+}

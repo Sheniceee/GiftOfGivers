@@ -1,0 +1,26 @@
+body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fafafa;
+}
+.hero{
+    background-color : #c0392b;
+    color:white;
+    padding:6px 20px;
+    border-radius:8px;
+    margin-bottom:30px;
+}
+.card-module{
+    border:none;
+    box-shadow:0 2px 8px rgba (0,0,0,08);
+    border-radius:10px;
+    transition:transform 0.15s ease-in-out;
+}
+.card-module:hover{
+    transform:translate(-4px);
+}
+.btn-primary-brand-hover{
+    background-color:#a93226;
+    border-color:#a93226;
+    color:white;
+}
+

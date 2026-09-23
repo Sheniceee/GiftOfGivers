@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftOfGivers", "GiftOfGivers\GiftOfGivers.csproj", "{97E20E0A-67D3-45CB-9A10-58010EF106A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftOfTheGivers.Helpers", "GiftOfTheGivers.Helpers\GiftOfTheGivers.Helpers.csproj", "{C549AD3F-ACD8-4C66-AC35-43FFAE9F3414}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+		Dockerfile.txt = Dockerfile.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftOfGivers.Functions", "GiftOfGivers.Functions\GiftOfGivers.Functions.csproj", "{01370AD5-D576-401E-AA7A-8E534D7D5B1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97E20E0A-67D3-45CB-9A10-58010EF106A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E20E0A-67D3-45CB-9A10-58010EF106A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E20E0A-67D3-45CB-9A10-58010EF106A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E20E0A-67D3-45CB-9A10-58010EF106A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C549AD3F-ACD8-4C66-AC35-43FFAE9F3414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C549AD3F-ACD8-4C66-AC35-43FFAE9F3414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C549AD3F-ACD8-4C66-AC35-43FFAE9F3414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C549AD3F-ACD8-4C66-AC35-43FFAE9F3414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01370AD5-D576-401E-AA7A-8E534D7D5B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01370AD5-D576-401E-AA7A-8E534D7D5B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01370AD5-D576-401E-AA7A-8E534D7D5B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01370AD5-D576-401E-AA7A-8E534D7D5B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FF96746-8DDA-499D-A5EE-2E7C4A653602}
+	EndGlobalSection
+EndGlobal

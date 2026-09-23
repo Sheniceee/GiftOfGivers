@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model GiftOfGivers.Controllers.RegisterViewModel;
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <h2> Create a Donor Account</h2>
+        <p class="text-muted">Prefer not to register?You can also <a asp-controller="Donate" asp-action="Index"> donate as a guest</a></p>
+
+        <form asp-action="register" method="post">
+            <div asp-validation-summary="All" class="text-danger"> </div>
+
+            <div class="mb-3">
+                <label asp-for="FullName" class="form-label">FullName</label>
+                <input asp-for="FullName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" class="form-control" />
+            </div>
+        </form>
+    </div>
+
+
+</div>

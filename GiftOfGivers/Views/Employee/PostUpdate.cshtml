@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model GiftOfGivers.Models.ReliefProject
+@{
+    ViewData["Title"] = "Post Relief Project Update";
+
+}
+<h2>Post a Relief Project Update</h2>
+
+<form asp-action="PostUpdate" method="post" class="col-md-6">
+    <div asp-validation-summary="All" class="text-danger"> </div>
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Project Title</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label">Location</label>
+        <input asp-for="Location" class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+
+        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+            
+    </div>
+    <button type="submit" class="btn btn-primary-brand">Post Update</button>
+</form>

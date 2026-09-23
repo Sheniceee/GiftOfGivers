@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model GiftOfGivers.Controllers.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+
+}
+<div class="row justify-content-center"></div>
+<div class="col-md-5"> 
+    <h2> Login</h2>
+    <p class="text-muted small">
+        Demo employee account: employee@giftofgivers.org / Employee123
+    </p>
+
+    <form asp-action="Login" method="post">
+            <div asp-validation-summary="All" class="text-danger"> </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+            <input asp-for="RememberMe" class="form-check-input" />
+                <label asp-for="RememberMe" class="form-check-label">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary-brand">Login</button>
+                </form>
+</div>
+</div>

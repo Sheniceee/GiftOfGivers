@@ -1,0 +1,21 @@
+﻿@model GiftOfGivers.Models.Donation
+
+<div class="container text-center mt-5">
+    <h2 class="text-success fw-bold">Thank you for your donation!</h2>
+
+    <p class="lead mt-3">
+        Your recurring donation of <strong>@Model.Currency @Model.Amount.ToString("N2")</strong> has been received.
+    </p>
+
+    <p>Certificate Number: <strong>@Model.CertificateNumber</strong></p>
+    <p class="text-muted">@ViewBag.ThankYou - Total with handling: @ViewBag.Total</p>
+
+    <div class="mt-4">
+        <a asp-controller="Donate" asp-action="DownloadCertificate" asp-route-id="@Model.DonationID" class="btn btn-danger">
+            Download Tax Certificate (PDF)
+        </a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary ms-2">
+            Back to Home
+        </a>
+    </div>
+</div>
